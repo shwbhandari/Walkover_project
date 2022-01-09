@@ -2,7 +2,59 @@
 
 {% extends 'base.html' %}
 {% block body %}
-    <h1>Hello, Welcome to the application</h1>
-{% endblock body %}
+
+  <div class="px-4 py-5 my-5 text-center">
+    <img class="d-block mx-auto mb-4" src="/static/img/create.png" alt=" create" width="150" height="100">
+    <h1 class="display-5 fw-bold"> Create Dynamic Table(s)</h1>
+    <div class="col-lg-6 mx-auto">
+      <p class="lead mb-4">Quickly create dynamic tables(s) and collect all your user data. </p>
+      <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+        {% if user.is_authenticated %}
+        <button type="button" class="btn btn-primary btn-lg px-4 gap-3 ">Create</button>
+           {% else %}
+           <p class="lead">
+            <a href="/login/auth0" class="btn btn-primary btn-lg px-4 gap-3">Login to continue</a>
+           </p>
+        {% endif %}
+
+      
+      </div>
+    </div>
+
+<div class="px-4 py-5 my-5 text-center">
+    <img class="d-block mx-auto mb-4" src="/static/img/add.jpg" alt=" create" width="150" height="100">
+    <h1 class="display-5 fw-bold"> Add Data To Your Table(s)</h1>
+    <div class="col-lg-6 mx-auto">
+      <p class="lead mb-4">Add or modify data inside table </p>
+      <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+        {% if user.is_authenticated %}
+        <button type="button" class="btn btn-primary btn-lg px-4 gap-3 ">Add/modify</button>
+           {% else %}
+           <p class="lead">
+            <a href="/login/auth0" class="btn btn-primary btn-lg px-4 gap-3">Login to continue</a>
+           </p>
+        {% endif %}
+
+      
+      </div>
+    </div>
+     <div class="px-4 py-5 my-5 text-center">
+    <img class="d-block mx-auto mb-4" src="/static/img/view.jpg" alt=" create" width="150" height="100">
+    <h1 class="display-5 fw-bold"> View Data Inside Table(s)</h1>
+    <div class="col-lg-6 mx-auto">
+      <p class="lead mb-4">View/search data inside table, filter data coloum wise  </p>
+      <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+        {% if user.is_authenticated %}
+        <button type="button" class="btn btn-primary btn-lg px-4 gap-3 ">View</button>
+           {% else %}
+           <p class="lead">
+            <a href="/login/auth0" class="btn btn-primary btn-lg px-4 gap-3">Login to continue</a>
+           </p>
+        {% endif %}
+
+      
+      </div>
+    </div>
+  </div>    {% endblock body %}
 
 
