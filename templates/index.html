@@ -10,7 +10,7 @@
       <p class="lead mb-4">Quickly create dynamic tables(s) and collect all your user data. </p>
       <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
         {% if user.is_authenticated %}
-        <button type="button" class="btn btn-primary btn-lg px-4 gap-3 ">Create</button>
+    <a href="{% url 'create_models' %}" class="btn btn-primary btn-lg px-4 gap-3">Create</a>
            {% else %}
            <p class="lead">
             <a href="/login/auth0" class="btn btn-primary btn-lg px-4 gap-3">Login to continue</a>
@@ -28,7 +28,7 @@
       <p class="lead mb-4">Add or modify data inside table </p>
       <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
         {% if user.is_authenticated %}
-        <button type="button" class="btn btn-primary btn-lg px-4 gap-3 ">Add/modify</button>
+        <a href="{% url 'add_entries' %}" class="btn btn-primary btn-lg px-4 gap-3">Add/modify</a>
            {% else %}
            <p class="lead">
             <a href="/login/auth0" class="btn btn-primary btn-lg px-4 gap-3">Login to continue</a>
@@ -45,7 +45,7 @@
       <p class="lead mb-4">View/search data inside table, filter data coloum wise  </p>
       <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
         {% if user.is_authenticated %}
-        <button type="button" class="btn btn-primary btn-lg px-4 gap-3 ">View</button>
+      <a href="{% url 'show_objects' %}" class="btn btn-primary btn-lg px-4 gap-3">View</a>
            {% else %}
            <p class="lead">
             <a href="/login/auth0" class="btn btn-primary btn-lg px-4 gap-3">Login to continue</a>

@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'Home',
     'social_django',
+    'dynamic_models',
 ]
 SOCIAL_AUTH_TRAILING_SLASH = False
 SOCIAL_AUTH_AUTH0_DOMAIN = config('APP_DOMAIN')
@@ -65,6 +66,13 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'project.urls'
+DYNAMIC_MODELS = {
+    'DEFAULT_CHARFIELD_MAX_LENGTH': 255,
+    # 'CACHE_TIMEOUT': 10,
+    'USE_APP_LABEL': 'Home',
+    'CACHE_KEY_PREFIX': 'Home_',
+}
+
 
 TEMPLATES = [
     {
