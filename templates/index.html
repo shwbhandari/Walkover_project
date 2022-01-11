@@ -3,14 +3,14 @@
 {% extends 'base.html' %}
 {% block body %}
 
-  <div class="px-4 py-5 my-5 text-center">
+  <div class="px-4 py-5 my-5 text-center" style="postion:absoulte;left:50;border-radius:10px; margin-left:auto;margin-right:auto;padding:20px;width:600px;height=200px;background-color:#DBC4FB" >
     <img class="d-block mx-auto mb-4" src="/static/img/create.png" alt=" create" width="150" height="100">
     <h1 class="display-5 fw-bold"> Create Dynamic Table(s)</h1>
     <div class="col-lg-6 mx-auto">
       <p class="lead mb-4">Quickly create dynamic tables(s) and collect all your user data. </p>
       <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
         {% if user.is_authenticated %}
-    <a href="{% url 'create_models' %}" class="btn btn-primary btn-lg px-4 gap-3">Create</a>
+            <a href="{% url 'create_models' %}" class="btn btn-primary btn-lg px-4 gap-3">Create</a>
            {% else %}
            <p class="lead">
             <a href="/login/auth0" class="btn btn-primary btn-lg px-4 gap-3">Login to continue</a>
@@ -20,8 +20,10 @@
       
       </div>
     </div>
+  </div>
 
-<div class="px-4 py-5 my-5 text-center">
+
+<div class="px-4 py-5 my-5 text-center"style="postion:absoulte;left:50;border-radius:10px; margin-left:auto;margin-right:auto;padding:20px;width:600px;height=200px;background-color:#DBC4FB" >
     <img class="d-block mx-auto mb-4" src="/static/img/add.jpg" alt=" create" width="150" height="100">
     <h1 class="display-5 fw-bold"> Add Data To Your Table(s)</h1>
     <div class="col-lg-6 mx-auto">
@@ -38,9 +40,15 @@
       
       </div>
     </div>
-     <div class="px-4 py-5 my-5 text-center">
+  </div>
+
+
+
+     <div class="px-5 py-5 my-5 text-center" style="postion:absoulte;left:50;border-radius:10px; margin-left:auto;margin-right:auto;padding:20px;width:600px;height=200px;background-color:#DBC4FB" >
+       
     <img class="d-block mx-auto mb-4" src="/static/img/view.jpg" alt=" create" width="150" height="100">
-    <h1 class="display-5 fw-bold"> View Data Inside Table(s)</h1>
+  
+    <h1 class="display-5 fw-bold" > View Data Inside Table(s)</h1>
     <div class="col-lg-6 mx-auto">
       <p class="lead mb-4">View/search data inside table, filter data coloum wise  </p>
       <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
@@ -55,6 +63,7 @@
       
       </div>
     </div>
-  </div>    {% endblock body %}
+  </div>  
+  {% endblock body %}
 
 

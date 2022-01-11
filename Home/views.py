@@ -89,6 +89,39 @@ def showObjectLists(request):
     return render(request, 'displayObjects.html', context=cont_dict)
 
 
+def test(request):
+    modelNamesQuerySet = Modelnames.objects.all()
+    modelNames = list()
+    for model in modelNamesQuerySet:
+        modelNames.append(model.modelname)
+    cont_dict = {
+        'modelNames': modelNames,
+        'get': True
+    }
+    if request.POST:
+        model = ModelSchema.objects.get(
+            name=request.POST['modelname']).as_model()
+        objList = model.objects.all().values()
+        fieldNames = list()
+        noEntry = False
+        try:
+            for x in objList[0]:
+                fieldNames.append(x)
+        except Exception as e:
+            noEntry = True
+        cont_dict = {
+            'modelNames': modelNames,
+            'objects': objList,
+            'noEntry': noEntry,
+            'fieldNames': fieldNames,
+            'objectType': request.POST['modelname'],
+            'get': False
+        }
+    return render(request, 'test.html', context=cont_dict)
+
+
+
+
 # Create your views here.
 
 def index(request):

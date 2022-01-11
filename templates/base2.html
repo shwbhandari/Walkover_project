@@ -13,8 +13,8 @@
   <body>
     
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">Table App</a>
+    <nav class="navbar navbar-expand-lg" style="background-color: #B37FD5" >
+        <a class="navbar-brand" href="#" style="color:black"><b>Table App</b></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -22,27 +22,26 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="/" style="color:black"><b>Home</b> <span class="sr-only">(current)</span></a>
             </li>
           
         {% if user.is_authenticated %}
         <li class="nav-item">
-          <a class="nav-link" href="/logout">logout</a>
+          <a class="nav-link" href="/logout"style="color:black" ><b>logout</b></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/profile">Dashboard</a>
+          <a class="nav-link" href="/profile" style="color:black" ><b>Dashboard</b></a>
         </li>
             {% else %}
             <li class="nav-item">
-              <a class="nav-link" href="/login/auth0">Login</a>
+              <a class="nav-link" href="/login/auth0" style="color:black"><b>Login</b></a>
             </li>
             {% endif %}
           </ul>
         
         </div>
       </nav>
-
-
+  
     <div class="container">
       <scrollable-component  class="animate__animated animate__zoomIn">
         {% block content %}

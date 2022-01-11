@@ -31,12 +31,24 @@
     {% if noEntry %}
       <h4 class="text-center mt-5">There is no entry to display.</h4>
     {% else %}
+    <div >
+<div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Apply filters by columns
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+    {% for field in fieldNames %}
+    <a class="dropdown-item" href="#">{{field}}</a>
+  {% endfor %}
+ </div>
+</div>
+
     <div class="table-responsive-sm">
       <table class="table">
         <thead>
           <tr>
             {% for field in fieldNames %}
-              <th scope="col">{{ field }}</th>
+              <th scope="col">{{field}}</th>
             {% endfor %}
           </tr>
         </thead>
@@ -45,7 +57,7 @@
             <tr>
               {% for property,value in x.items %}
                 {% if property == 'id' %}
-                  <th scope="row">{{ value }}</th>
+                  <th scope="row">{{ value  }}</th>
                 {% else %}
                   <td>{{ value }}</td>
                 {% endif %}
@@ -58,4 +70,5 @@
     {% endif %}
   {% endif %}
 </div>
+
 {% endblock %}
